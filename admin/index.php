@@ -1,5 +1,11 @@
-<?php include 'admin_header.php'; ?>
-<!-- Sửa đường dẫn CSS cho đúng -->
+<?php
+session_start();
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    echo '<div style="color:red;text-align:center;margin-top:40px;font-size:20px;">You do not have permission to access this page!</div>';
+    exit();
+}
+include 'admin_header.php';
+?>
 <link rel="stylesheet" href="../assets/css/all.min.css">
 <link rel="stylesheet" href="../admin/css/sb-admin-2.min.css">
 
