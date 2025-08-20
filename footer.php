@@ -9,18 +9,18 @@
                     <p class="mb-2">BookHaven is the ideal destination for book lovers. We offer thousands of diverse
                         titles, from literature, science, life skills to children's books, helping you easily find the
                         most suitable book for yourself.</p>
-                    <a class="link-dark" href="contact-us.php">Contact BookHaven</a>
+                    <a class="link-dark" href="<?= APP_URL ?>/contact-us.php">Contact BookHaven</a>
                 </div>
             </div>
             <div class="col">
                 <div class="footer-widget-7">
                     <h5 class="mb-3 fw-bold">Book Categories</h5>
                     <ul class="widget-link list-unstyled">
-                        <li><a href="categories.php?id=6">Literature & Arts</a></li>
-                        <li><a href="categories.php?id=7">Social Sciences & Humanities</a></li>
-                        <li><a href="categories.php?id=8">Natural Sciences</a></li>
-                        <li><a href="categories.php?id=9">Technology & Engineering</a></li>
-                        <li><a href="categories.php?id=10">Travel & Culture</a></li>
+                        <li><a href="<?= APP_URL ?>/categories.php?id=6">Literature & Arts</a></li>
+                        <li><a href="<?= APP_URL ?>/categories.php?id=7">Social Sciences & Humanities</a></li>
+                        <li><a href="<?= APP_URL ?>/categories.php?id=8">Natural Sciences</a></li>
+                        <li><a href="<?= APP_URL ?>/categories.php?id=9">Technology & Engineering</a></li>
+                        <li><a href="<?= APP_URL ?>/categories.php?id=10">Travel & Culture</a></li>
                     </ul>
                 </div>
             </div>
@@ -28,12 +28,12 @@
                 <div class="footer-widget-8">
                     <h5 class="mb-3 fw-bold">Information</h5>
                     <ul class="widget-link list-unstyled">
-                        <li><a href="about-us.php">About BookHaven</a></li>
-                        <li><a href="contact-us.php">Contact</a></li>
-                        <li><a href="faq.php">FAQ</a></li>
-                        <li><a href="privacy.php">Privacy Policy</a></li>
-                        <li><a href="terms.php">Terms of Use</a></li>
-                        <li><a href="complaints.php">Feedback & Complaints</a></li>
+                        <li><a href="<?= APP_URL ?>/about-us.php">About BookHaven</a></li>
+                        <li><a href="<?= APP_URL ?>/contact-us.php">Contact</a></li>
+                        <li><a href="<?= APP_URL ?>/faq.php">FAQ</a></li>
+                        <li><a href="<?= APP_URL ?>/privacy.php">Privacy Policy</a></li>
+                        <li><a href="<?= APP_URL ?>/terms.php">Terms of Use</a></li>
+                        <li><a href="<?= APP_URL ?>/complaints.php">Feedback & Complaints</a></li>
                     </ul>
                 </div>
             </div>

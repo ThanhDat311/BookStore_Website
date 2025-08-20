@@ -68,7 +68,8 @@
                                     <textarea class="form-control rounded-0" rows="4" cols="4"></textarea>
                                 </div>
                                 <div class="mb-0">
-                                    <a href="thank-you.html" class="btn btn-dark btn-ecomm">Send Message</a>
+                                    <a href="<?= APP_URL ?>/thank-you.html" class="btn btn-dark btn-ecomm">Send
+                                        Message</a>
                                 </div>
                             </div>
                         </form>

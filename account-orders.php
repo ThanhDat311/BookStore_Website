@@ -76,7 +76,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <b>Tax:</b> <?= number_format($order_detail['tax_fee'], 0, ',', '.') ?>₫<br>
                     <b>Total:</b> <?= number_format($order_detail['total'], 0, ',', '.') ?>₫
                 </div>
-                <a href="account-orders.php" class="btn btn-outline-dark mt-3">Back to Order List</a>
+                <a href="<?= APP_URL ?>/account-orders.php" class="btn btn-outline-dark mt-3">Back to Order List</a>
             </div>
         </div>
         <?php endif; ?>
@@ -102,7 +102,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?= htmlspecialchars($order['created_at']) ?></td>
                                 <td><?= htmlspecialchars($order['status']) ?></td>
                                 <td><?= number_format($order['total'], 0, ',', '.') ?>₫</td>
-                                <td><a href="account-orders.php?order_id=<?= $order['id'] ?>"
+                                <td><a href="<?= APP_URL ?>/account-orders.php?order_id=<?= $order['id'] ?>"
                                         class="btn btn-sm btn-dark">View Details</a></td>
                             </tr>
                             <?php endforeach; ?>

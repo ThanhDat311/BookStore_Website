@@ -1,5 +1,21 @@
 <?php
 session_start();
+// Handle add to cart
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
+    $pid = (int)$_POST['product_id'];
+    $qty = isset($_POST['quantity']) ? (int)$_POST['quantity'] : 1;
+    if ($pid > 0) {
+        if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
+        if (isset($_SESSION['cart'][$pid])) {
+            $_SESSION['cart'][$pid] += $qty;
+        } else {
+            $_SESSION['cart'][$pid] = $qty;
+        }
+        $_SESSION['cart_success'] = 'Added to cart!';
+        header('Location: cart.php');
+        exit;
+    }
+}
 include 'header.php';
 require_once __DIR__ . '/config/database.php';
 
@@ -27,8 +43,8 @@ $img_stmt->execute([$id]);
 $images = $img_stmt->fetchAll();
 ?>
 <!--start product details-->
-<section class="py-4">
-    <div class="container">
+<div class="container mt-5">
+    <section class="py-4">
         <div class="row g-4">
             <div class="col-12 col-xl-7">
                 <div class="product-images">
@@ -136,8 +152,8 @@ $images = $img_stmt->fetchAll();
             </div>
             <!--end row-->
         </div>
-    </div>
-</section>
+    </section>
+</div>
 <!--end similar products section-->
 
 

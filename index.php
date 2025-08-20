@@ -34,7 +34,8 @@ $categories = $stmt_categories->fetchAll();
                             <h3 class="h3 fw-light fw-bold">Discover New Books</h3>
                             <h1 class="h1 fw-bold">New Releases</h1>
                             <p class="text-dark fw-bold"><i>Up to 30% off on new books!</i></p>
-                            <div><a class="btn btn-light btn-ecomm" href="categories.php">Shop Now</a></div>
+                            <div><a class="btn btn-light btn-ecomm" href="<?= APP_URL ?>/categories.php">Shop Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,7 +47,8 @@ $categories = $stmt_categories->fetchAll();
                             <h3 class="h3 text-white fw-light fw-bold">Bestsellers</h3>
                             <h1 class="h1 text-white fw-bold">Top Best Seller</h1>
                             <p class="fw-bold"><i>Special discounts on bestsellers!</i></p>
-                            <div><a class="btn btn-light btn-ecomm" href="categories.php">Explore Now</a></div>
+                            <div><a class="btn btn-light btn-ecomm" href="<?= APP_URL ?>/categories.php">Explore Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -58,7 +60,8 @@ $categories = $stmt_categories->fetchAll();
                             <h3 class="h3 fw-light fw-bold">Books for All Ages</h3>
                             <h1 class="h1 fw-bold">A World of Books</h1>
                             <p class="fw-bold"><i>Explore our wide collection for everyone!</i></p>
-                            <div><a class="btn btn-light btn-ecomm" href="categories.php">See All</a></div>
+                            <div><a class="btn btn-light btn-ecomm" href="<?= APP_URL ?>/categories.php">See All</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -105,7 +108,7 @@ $categories = $stmt_categories->fetchAll();
                                         class="bi bi-basket3"></i></button>
                             </form>
                         </div>
-                        <a href="product-details.php?id=<?= $p['id'] ?>">
+                        <a href="<?= APP_URL ?>/product-details.php?id=<?= $p['id'] ?>">
                             <?php if ($p['thumbnail']): ?>
                             <img src="assets/images/product-images/<?= htmlspecialchars($p['thumbnail']) ?>"
                                 class="card-img-top" alt="<?= htmlspecialchars($p['name']) ?>"

@@ -114,7 +114,7 @@ if ($cart) {
                     </h4>
                 </div>
                 <div class="ms-auto">
-                    <a href="index.php" class="btn btn-light btn-ecomm">Continue Shopping</a>
+                    <a href="<?= APP_URL ?>/index.php" class="btn btn-light btn-ecomm">Continue Shopping</a>
                 </div>
             </div>
             <div class="row g-4">

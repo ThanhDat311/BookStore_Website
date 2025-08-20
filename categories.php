@@ -60,7 +60,8 @@ if ($categoryId > 0) {
             <div class="row">
                 <?php foreach ($products as $product): ?>
                 <div class="col-md-3 mb-4">
-                    <div class="card h-100">
+                    <div class="card h-100 card-hover-effect" style="cursor:pointer"
+                        onclick="window.location.href='product-details.php?id=<?= $product['id'] ?? $p['id'] ?>'">
                         <?php
                         $thumb = $product['thumbnail'] ?? $thumbnail ?? '';
                         if (preg_match('/^http/', $thumb)) {
@@ -151,12 +152,14 @@ if ($categoryId > 0) {
                                         <form method="post" style="display:inline;">
                                             <input type="hidden" name="product_id" value="<?= $p['id'] ?>">
                                             <input type="hidden" name="quantity" value="1">
-                                            <button type="submit" name="add_to_cart"
-                                                class="btn p-0 border-0 bg-transparent"><i
-                                                    class="bi bi-basket3"></i></button>
+                                            <button type="button" name="add_to_cart"
+                                                class="btn p-0 border-0 bg-transparent cart-hover-btn"
+                                                onclick="window.location.href='product-details.php?id=<?= $p['id'] ?>'">
+                                                <i class="bi bi-basket3"></i>
+                                            </button>
                                         </form>
                                     </div>
-                                    <a href="product-details.php?id=<?= $p['id'] ?>">
+                                    <a href="<?= APP_URL ?>/product-details.php?id=<?= $p['id'] ?>">
                                         <?php if ($p['thumbnail']): ?>
                                         <img src="assets/images/product-images/<?= htmlspecialchars($p['thumbnail']) ?>"
                                             class="card-img-top" alt="<?= htmlspecialchars($p['name']) ?>"
@@ -193,4 +196,29 @@ if ($categoryId > 0) {
         </div>
     </section>
 </div>
+<style>
+.cart-hover-btn {
+    transition: background 0.2s, color 0.2s;
+}
+
+.cart-hover-btn:hover {
+    background: #212529;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.cart-hover-btn:hover .bi-basket3 {
+    color: #fff;
+}
+
+.card-hover-effect {
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card-hover-effect:hover {
+    box-shadow: 0 8px 24px rgba(33, 37, 41, 0.15), 0 1.5px 6px rgba(33, 37, 41, 0.10);
+    transform: translateY(-4px) scale(1.03);
+    z-index: 2;
+}
+</style>
 <?php include 'footer.php'; ?>

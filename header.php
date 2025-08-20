@@ -24,8 +24,8 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 
     <header class="top-header">
         <nav class="navbar navbar-expand-xl w-100 navbar-dark container gap-3">
-            <a class="navbar-brand d-none d-xl-inline" href="index.php"><img src="assets/images/logo.webp"
-                    class="logo-img" alt=""></a>
+            <a class="navbar-brand d-none d-xl-inline" href="<?= APP_URL ?>/index.php"><img
+                    src="assets/images/logo.webp" class="logo-img" alt=""></a>
             <a class="mobile-menu-btn d-inline d-xl-none" href="javascript:;" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar">
                 <i class="bi bi-list"></i>
@@ -40,7 +40,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
                 <div class="offcanvas-body primary-menu">
                     <ul class="navbar-nav justify-content-start flex-grow-1 gap-1">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home</a>
+                            <a class="nav-link" href="<?= APP_URL ?>/index.php">Home</a>
                         </li>
                         <?php
             require_once __DIR__ . '/config/database.php';
@@ -49,11 +49,11 @@ if (session_status() === PHP_SESSION_NONE) session_start();
             foreach ($categories as $cat): ?>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="categories.php?id=<?= $cat['id'] ?>"><?= htmlspecialchars($cat['name']) ?></a>
+                                href="<?= APP_URL ?>/categories.php?id=<?= $cat['id'] ?>"><?= htmlspecialchars($cat['name']) ?></a>
                         </li>
                         <?php endforeach; ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact-us.php">Contact</a>
+                            <a class="nav-link" href="<?= APP_URL ?>/contact-us.php">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -61,7 +61,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
             <ul class="navbar-nav secondary-menu flex-row">
 
                 <li class="nav-item">
-                    <a class="nav-link position-relative" href="cart.php">
+                    <a class="nav-link position-relative" href="<?= APP_URL ?>/cart.php">
                         <?php
                         $cart_count = 0;
                         if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
@@ -74,14 +74,14 @@ if (session_status() === PHP_SESSION_NONE) session_start();
                 </li>
                 <?php if (!empty($_SESSION['user_id'])): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="account-profile.php">My Profile</a>
+                    <a class="nav-link" href="<?= APP_URL ?>/account-profile.php">My Profile</a>
                 </li>
                 <?php else: ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="authentication-login.php">Login</a>
+                    <a class="nav-link" href="<?= APP_URL ?>/authentication-login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="authentication-register.php">Register</a>
+                    <a class="nav-link" href="<?= APP_URL ?>/authentication-register.php">Register</a>
                 </li>
                 <?php endif; ?>
             </ul>

@@ -61,20 +61,20 @@ if ($user_id) {
                             </div>
                             <div class="offcanvas-body account-menu">
                                 <div class="list-group w-100 rounded-0">
-                                    <a href="account-dashboard.html" class="list-group-item"><i
+                                    <a href="<?= APP_URL ?>/account-dashboard.html" class="list-group-item"><i
                                             class="bi bi-house-door me-2"></i>Dashboard</a>
-                                    <a href="account-orders.php" class="list-group-item"><i
+                                    <a href="<?= APP_URL ?>/account-orders.php" class="list-group-item"><i
                                             class="bi bi-basket3 me-2"></i>Orders</a>
-                                    <a href="account-profile.php" class="list-group-item active"><i
+                                    <a href="<?= APP_URL ?>/account-profile.php" class="list-group-item active"><i
                                             class="bi bi-person me-2"></i>Profile</a>
-                                    <a href="account-edit-profile.html" class="list-group-item"><i
+                                    <a href="<?= APP_URL ?>/account-edit-profile.html" class="list-group-item"><i
                                             class="bi bi-pencil me-2"></i>Edit Profile</a>
-                                    <a href="account-saved-address.html" class="list-group-item"><i
+                                    <a href="<?= APP_URL ?>/account-saved-address.html" class="list-group-item"><i
                                             class="bi bi-pin-map me-2"></i>Saved Address</a>
-                                    <a href="wishlist.html" class="list-group-item"><i
+                                    <a href="<?= APP_URL ?>/wishlist.html" class="list-group-item"><i
                                             class="bi bi-suit-heart me-2"></i>Wishlist</a>
-                                    <a href="account-profile.php?action=logout" class="list-group-item"><i
-                                            class="bi bi-power me-2"></i>Logout</a>
+                                    <a href="<?= APP_URL ?>/account-profile.php?action=logout"
+                                        class="list-group-item"><i class="bi bi-power me-2"></i>Logout</a>
                                 </div>
                             </div>
                         </div>
